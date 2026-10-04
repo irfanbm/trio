@@ -53,6 +53,7 @@ PATH_VO: [lokasi file audio]
 STYLE: [nama style; warna aksen bila ditentukan]
 RATIO: [9:16 / 16:9 / 1:1]
 OUTPUT: [draft / final]
+CAPTION: [off / on]
 ASET_EKSTERNAL: [tidak / ya]
 PATH_ASET: [wajib jika ASET_EKSTERNAL=ya; path folder gambar/screenshot]
 
@@ -60,7 +61,8 @@ Default:
 - Gunakan HyperFrames faceless-explainer. Pertahankan VO asli dan ikuti isi serta bahasa yang benar-benar terdengar.
 - Periksa durasi, bahasa, dan kondisi audio; transkripsikan VO dengan word-level timestamps sebelum menulis storyboard.
 - Jika transkripsi gagal, jangan menyimpulkan isi dari nama file, jangan membuat timing/caption seolah sudah terverifikasi, dan jangan membangun visual final. Beri tahu pengguna penyebab serta opsi berikutnya.
-- Selaraskan storyboard, reveal visual, dan caption ke timestamp VO. Caption kata demi kata hanya dibuat bila timestamp tersedia dan tervalidasi.
+- Default subtitle/caption adalah OFF. Buat hanya jika `CAPTION: on` diminta secara eksplisit.
+- Jika caption diminta, selaraskan storyboard, reveal visual, dan caption ke timestamp VO. Caption kata demi kata hanya dibuat bila timestamp tersedia dan tervalidasi. Jika timestamp tidak tersedia, berhenti dan jelaskan kendala; jangan mengarang sinkronisasi.
 - ASET_EKSTERNAL=tidak: buat visual full motion dari tipografi, diagram, grafis, dan animasi yang relevan dengan VO.
 - ASET_EKSTERNAL=ya: inventaris dan cocokkan aset dari PATH_ASET dengan isi VO/storyboard; gunakan aset yang relevan dan isi beat tanpa aset dengan full motion. Jangan mewajibkan setiap gambar tampil.
 - Jangan mengubah file aset sumber. Salin/adopt hanya aset yang dipilih ke project dan pertahankan nama/provenance yang jelas.
@@ -85,6 +87,7 @@ STYLE: Swiss Pulse, aksen hijau #15A161
 RATIO: 9:16
 OUTPUT: draft
 ASET_EKSTERNAL: tidak
+CAPTION: off
 ```
 
 ### Contoh: Memakai Screenshot dan Foto
@@ -98,6 +101,7 @@ RATIO: 9:16
 OUTPUT: final
 ASET_EKSTERNAL: ya
 PATH_ASET: M:\Videos\penjelasan-cache\assets
+CAPTION: on
 HINDARI: jangan pakai foto stok atau data yang tidak ada sumbernya
 ```
 
@@ -122,6 +126,7 @@ HINDARI: jangan pakai foto stok atau data yang tidak ada sumbernya
 - DURING: semua keputusan warna, tipografi, komposisi, motion, caption, dan copy punya tujuan yang jelas.
 - AFTER: audit teks (tanpa em dash buatan agen dan tanpa buzzword/klaim palsu), kontras, keterbacaan mobile/rasio target, pacing, identitas visual, dan aset yang benar-benar cocok.
 - Jalankan pemeriksaan HyperFrames yang sesuai (`npx hyperframes check`; snapshot saat dibutuhkan), perbaiki error dan temuan yang memengaruhi hasil.
+- Subtitle/caption default OFF; bila `CAPTION: on`, pastikan teks bersumber dari transkrip dan sinkron dengan timestamp.
 - Laporan akhir menyebut path render, durasi, dimensi/fps, hasil check, apakah preview disetujui, serta batasan seperti caption yang dilewati atau aset ambigu.
 
 ## CLI HyperFrames
