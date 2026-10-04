@@ -10,7 +10,7 @@ Cukup bilang **"pakai trio"** / **"mode trio"** ke agen, dan dia akan me-routing
 | **OneTake** | `onetake` (+ `lib/`, `scripts/`, `references/`, `templates/`, `looks/`, `cases/`) | Film motion produk 10–60 detik yang *continuous* / one-take, anti-slideshow |
 | **Anti-Slop** | `antislop` (core, selalu aktif) + `antislop-ui`, `antislop-copywriting`, `antislop-human`, `antislop-layoutmobile`, `antislop-code` | Filter UI / copy / code generik khas AI — termasuk teks & tampilan di dalam video |
 
-Skill payung `trio/SKILL.md` (buatan lokal) berisi aturan routing lengkapnya.
+Skill payung `skills/trio/SKILL.md` berisi aturan routing, template perintah VO, serta alur pencocokan aset eksternal. Salin folder `skills/trio/` ke direktori skills agen agar perintah "pakai trio" tersedia.
 
 ## Cara install
 
@@ -31,7 +31,7 @@ Tarik ulang dari repo sumbernya dan timpa folder terkait:
 - OneTake → `feitangyuan/onetake`, root repo
 - Anti-Slop → `miqdadbadjuber/anti-slop`, folder `skills/`
 
-Skill `trio/` adalah buatan lokal — jangan ditimpa saat update.
+Skill `skills/trio/` dikelola di repo ini — perubahan pada file tersebut ikut tersedia saat repo diperbarui.
 
 ## Sumber & lisensi
 
